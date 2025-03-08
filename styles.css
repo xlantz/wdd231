@@ -49,10 +49,13 @@ nav ul li a:hover {
 }
 
 main {
-  display: grid; /* Make the main content area a grid */
-  grid-template-columns: 1fr; /* Default to a single column on small screens */
-  grid-gap: 20px; /* Add some space between the sections */
   padding: 20px;
+}
+
+.top-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns layout for Course Work and About Me */
+  grid-gap: 20px; /* Add some space between the sections */
 }
 
 .grid-item {
@@ -61,13 +64,23 @@ main {
   border-radius: 8px;
 }
 
+.left {
+  grid-column: 1; /* Ensure Course Work stays on the left */
+}
+
+.right {
+  grid-column: 2; /* Ensure About Me stays on the right */
+}
+
+.programming {
+  margin-top: 20px; /* Add some space above Programming section */
+}
+
 @media screen and (min-width: 600px) {
   nav ul {
-      flex-direction: row;
-      justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  main {
-      grid-template-columns: repeat(3, 1fr); /* On wider screens, use 3 columns */
-  }
+  /* No changes needed here; keeps the two-column layout for smaller screens */
 }
