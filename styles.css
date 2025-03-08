@@ -49,7 +49,16 @@ nav ul li a:hover {
 }
 
 main {
+  display: grid; /* Make the main content area a grid */
+  grid-template-columns: 1fr; /* Default to a single column on small screens */
+  grid-gap: 20px; /* Add some space between the sections */
   padding: 20px;
+}
+
+.grid-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 600px) {
@@ -59,7 +68,6 @@ main {
   }
 
   main {
-      display: flex;
-      justify-content: space-between;
+      grid-template-columns: repeat(3, 1fr); /* On wider screens, use 3 columns */
   }
 }
