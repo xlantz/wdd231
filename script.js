@@ -122,9 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
   firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman | VA`;
   secondParagraph.textContent = `Last modified: ${lastModifiedDate}`;
 
-  // Function to toggle the menu visibility
-  function toggleMenu() {
-  const menu = document.getElementById('menu');
-  menu.classList.toggle('visible'); // Add/remove the "visible" class
-}
+  // Toggle menu visibility on hamburger button click
+  hamburgerButton.addEventListener('click', () => {
+    menu.classList.toggle('visible');
+  });
 });

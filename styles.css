@@ -16,7 +16,7 @@ header img {
   height: auto;
   width: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-right: 20px; /* Space between image and text */
+  margin-right: 20px; 
 }
 
 header span {
@@ -51,6 +51,18 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ccc;
+}
+
+nav .hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 main {
@@ -215,31 +227,26 @@ footer p {
     padding: 15px; 
   }
   nav ul {
-    display: none; /* Hide the navigation by default */
-    flex-direction: column; /* Stack the navigation links vertically */
+    display: none; 
+    flex-direction: column; 
     background-color: #393D3F;
     position: absolute;
-    top: 50px; /* Position the menu below the hamburger icon */
+    top: 50px; 
     right: 0;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   }
 
   nav ul li {
-    margin: 15px 0; /* Adjust margin for mobile */
-    text-align: center; /* Center the links */
+    margin: 15px 0; 
+    text-align: center; 
   }
 
   nav ul li a {
-    font-size: 18px; /* Adjust font size for mobile */
+    font-size: 18px; 
   }
 
-  .hamburger {
-    display: block; /* Show the hamburger icon on mobile */
-  }
-
-  /* To show the menu when active */
   nav ul.visible {
-    display: flex; /* Show the navigation when the menu is active */
+    display: flex;
   }
 }
