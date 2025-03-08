@@ -1,35 +1,52 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    text-align: center;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  background-color: black; /* Set navbar background to black */
+  padding: 10px 0; /* Add some padding for better spacing */
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color to white */
+  font-weight: bold; /* Make the links bold for better visibility */
+}
+
+nav ul li a:hover {
+  color: #ccc; /* Change color on hover to a lighter shade of white */
+}
+
+main {
+  padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
   nav ul {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  nav ul li {
-    margin: 10px 0;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  @media screen and (min-width: 600px) {
-    nav ul {
       flex-direction: row;
       justify-content: space-around;
-    }
-  
-    main {
+  }
+
+  main {
       display: flex;
       justify-content: space-between;
-    }
   }
-  
+}
