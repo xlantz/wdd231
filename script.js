@@ -15,6 +15,6 @@ const firstParagraph = footer.querySelector('p:nth-of-type(1)');
 const secondParagraph = footer.querySelector('p:nth-of-type(2)');
 
 // Update the content of the paragraphs
-firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman | Volcano Place`;
+firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman`;
 secondParagraph.textContent = `Last modified: ${lastModifiedDate}`;
 });
