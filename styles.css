@@ -49,22 +49,17 @@ nav ul li a:hover {
 }
 
 main {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* Course work takes 2/3, About me takes 1/3 */
-  gap: 20px;
   padding: 20px;
 }
 
-.course-work {
-  grid-column: span 2; /* Make the course-work section span both columns */
-}
+@media screen and (min-width: 600px) {
+  nav ul {
+      flex-direction: row;
+      justify-content: space-around;
+  }
 
-.programming {
-  grid-column: span 2; /* Make the programming section span the full width */
-}
-
-@media screen and (max-width: 768px) {
   main {
-    grid-template-columns: 1fr; /* Stack sections on smaller screens */
+      display: flex;
+      justify-content: space-between;
   }
 }
