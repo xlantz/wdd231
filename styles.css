@@ -94,6 +94,49 @@ main {
   border: none;
 }
 
+.course-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.completed {
+  border: 2px solid green;
+}
+
+.not-completed {
+  border: 2px solid red;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.course-credits {
+  font-size: 16px;
+}
+
+.course-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.course-buttons button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.course-buttons button:hover {
+  background-color: #ddd;
+  border: none;
+}
+
+
 @media screen and (min-width: 600px) {
   nav ul {
     flex-direction: row;
