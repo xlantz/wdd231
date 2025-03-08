@@ -119,6 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const secondParagraph = footer.querySelector('p:nth-of-type(2)');
 
   // Update the content of the paragraphs
-  firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman`;
+  firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman | VA`;
   secondParagraph.textContent = `Last modified: ${lastModifiedDate}`;
 });
