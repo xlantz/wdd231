@@ -5,14 +5,18 @@ body {
 }
 
 header {
-  text-align: center;
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8DA7BE;
   padding: 20px;
 }
 
 header img {
   height: auto;
   width: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px; /* Space between image and text */
 }
 
 header span {
@@ -22,16 +26,17 @@ header span {
 }
 
 nav {
-  background-color: black;
+  background-color: #393D3F;
   padding: 10px 0;
+  position: relative;
 }
 
 nav ul {
   display: flex;
-  flex-direction: column;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  justify-content: space-around;
 }
 
 nav ul li {
@@ -62,31 +67,51 @@ main {
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added light shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .left {
   grid-column: 1;
+  
 }
 
+.left h2 {
+  text-align: center;
+}
 .right {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+
+.right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .programming {
   margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added light shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .course-buttons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; 
   margin-bottom: 15px;
 }
 
 .course-buttons button {
   padding: 10px 20px;
-  margin-right: 10px;
+  margin: 0 10px;
   font-size: 16px;
   cursor: pointer;
 }
@@ -126,22 +151,95 @@ main {
   margin-top: 10px;
 }
 
-.course-buttons button {
-  padding: 10px 20px;
-  margin-right: 10px;
-  font-size: 16px;
-  cursor: pointer;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #393D3F;
+  color: white;
 }
 
-.course-buttons button:hover {
-  background-color: #ddd;
-  border: none;
+footer p {
+  margin: 5px 0;
+}
+
+.grid-item h2 {
+  color: white; 
+  background-color: #8DA7BE; 
+  padding: 10px 0; 
+  text-align: center; 
+  margin: 0; 
+  width: 100%; 
+  box-sizing: border-box; 
+  border-top-left-radius: 8px; 
+  border-top-right-radius: 8px; 
 }
 
 
-@media screen and (min-width: 600px) {
+.grid-item {
+  margin-bottom: 20px;
+}
+
+
+.left h2 {
+  background-color: #8DA7BE; 
+}
+
+.right h2 {
+  background-color: #8DA7BE; 
+}
+
+.programming h2 {
+  background-color: #8DA7BE; 
+}
+
+@media screen and (max-width: 600px) {
+  .top-sections {
+    display: block;
+  }
+
+  .left {
+    order: 1; 
+  }
+
+  .right {
+    order: 2; 
+  }
+
+  .programming {
+    order: 3; 
+  }
+
+  .grid-item {
+    padding: 15px; 
+  }
   nav ul {
-    flex-direction: row;
-    justify-content: space-around;
+    display: none; /* Hide the navigation by default */
+    flex-direction: column; /* Stack the navigation links vertically */
+    background-color: #393D3F;
+    position: absolute;
+    top: 50px; /* Position the menu below the hamburger icon */
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+  }
+
+  nav ul li {
+    margin: 15px 0; /* Adjust margin for mobile */
+    text-align: center; /* Center the links */
+  }
+
+  nav ul li a {
+    font-size: 18px; /* Adjust font size for mobile */
+  }
+
+  .hamburger {
+    display: block; /* Show the hamburger icon on mobile */
+  }
+
+  /* To show the menu when active */
+  nav ul.visible {
+    display: flex; /* Show the navigation when the menu is active */
   }
 }

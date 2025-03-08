@@ -121,4 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update the content of the paragraphs
   firstParagraph.textContent = `© ${currentYear} | Alexander M. Lanterman | VA`;
   secondParagraph.textContent = `Last modified: ${lastModifiedDate}`;
+
+  // Function to toggle the menu visibility
+  function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('visible'); // Add/remove the "visible" class
+}
 });
