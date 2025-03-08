@@ -11,8 +11,8 @@ header {
 }
 
 header img {
-  height: 100%;
-  width: 100%; /* Make the header image 50% smaller */
+  height: auto;
+  width: auto; /* Make the header image 50% smaller */
 }
 
 header span {
