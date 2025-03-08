@@ -6,6 +6,18 @@ body {
 
 header {
   text-align: center;
+  background-color: blue; /* Set header background to blue */
+  padding: 20px; /* Add some padding around the content */
+}
+
+header img {
+  width: 50%; /* Make the header image 50% smaller */
+}
+
+header span {
+  color: white; /* Set the header text color to white */
+  font-size: 24px; /* Optional: Adjust the size of the text */
+  font-weight: bold; /* Optional: Make the text bold */
 }
 
 nav {
