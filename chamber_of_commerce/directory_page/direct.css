@@ -1,0 +1,55 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .business-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav .nav-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav .nav-list li {
+    margin-left: 20px;
+  }
+  
+  .nav .nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav .nav-list li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
