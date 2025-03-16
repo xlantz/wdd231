@@ -86,7 +86,7 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensures space between the sections */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -97,12 +97,13 @@ footer {
 }
 
 .footer-center {
-  flex: 2;
-  text-align: center;
+  flex: 2;  /* Gives the center section more space */
+  text-align: center; /* Ensures the icons are centered */
 }
 
 .footer-left p, .footer-right p {
   margin: 5px 0;
+  text-align: left; /* Ensures the left section text aligns to the left */
 }
 
 .footer-center a {
