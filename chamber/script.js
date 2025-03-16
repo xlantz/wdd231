@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //Hamburger Menu
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const navMenu = document.getElementById('nav-menu');
+  
+    hamburgerIcon.addEventListener('click', () => {
+      navMenu.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+    });
+
     // Footer
     const currentYear = new Date().getFullYear();
     const lastModifiedDate = document.lastModified;
