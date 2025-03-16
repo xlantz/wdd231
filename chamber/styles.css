@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #272932;
   color: white;
   flex-wrap: wrap;
 }
@@ -73,13 +73,13 @@
 }
 
 .nav .nav-list li a:hover {
-  background-color: #575757;
+  background-color: #272932;
   border-radius: 5px;
 }
 
 /* Footer Styles */
 footer {
-  background-color: #393D3F;
+  background-color: #272932;
   color: white;
   padding: 20px;
 }
@@ -141,7 +141,7 @@ footer p {
 #view-toggle button {
   padding: 10px 20px;
   margin: 5px;
-  background-color: #007BFF;
+  background-color: #c23f38;
   color: white;
   border: none;
   cursor: pointer;
@@ -149,7 +149,7 @@ footer p {
 }
 
 #view-toggle button:hover {
-  background-color: #0056b3;
+  background-color: #FFB86F;
 }
 
 /* List View Layout */
