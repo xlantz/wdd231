@@ -1,0 +1,73 @@
+[
+    {
+    "name": "Techvia",
+    "address": "123 Innovation Blvd, Blacksburg, VA",
+    "phone_number": "+1-168-555-1234",
+    "website": "https://techvia.com",
+    "image": "techvia_logo.png",
+    "membership_level": 1,
+    "industry": "Technology",
+    "founded": "2019"
+    },
+    {
+    "name": "Green Solutions Ltd.",
+    "address": "456 Green St, Encino, CA",
+    "phone_number": "+1-149-555-5678",
+    "website": "https://greensolutions.com",
+    "image": "green_solutions_logo.png",
+    "membership_level": 2,
+    "industry": "Environmental",
+    "founded": "2024"
+    },
+    {
+    "name": "Financology LLC",
+    "address": "789 Hoopla Rd, New York, NY",
+    "phone_number": "+1-798-555-7890",
+    "website": "https://financology.com",
+    "image": "financology_logo.png",
+    "membership_level": 2,
+    "industry": "Finance",
+    "founded": "2001"
+    },
+    {
+    "name": "Health Star",
+    "address": "321 Wellness Ave, Chicago, IL",
+    "phone_number": "+1-349-555-3456",
+    "website": "https://healthstar.com",
+    "image": "health_star_logo.png",
+    "membership_level": 1,
+    "industry": "Healthcare",
+    "founded": "1999"
+    },
+    {
+    "name": "Memerise",
+    "address": "654 Maven Rd, SLC, UT",
+    "phone_number": "+1-479-555-6789",
+    "website": "https://memerise.com",
+    "image": "memerise_logo.png",
+    "membership_level": 2,
+    "industry": "Marketing",
+    "founded": "2015"
+    },
+    {
+    "name": "Home Smart",
+    "address": "987 Tech Way, Austin, TX",
+    "phone_number": "+1-244-555-4321",
+    "website": "https://homesmart.com",
+    "image": "home_smart_logo.png",
+    "membership_level": 3,
+    "industry": "Technology",
+    "founded": "2010"
+    },
+    {
+    "name": "Luxation Travel",
+    "address": "123 First St, Miami, FL",
+    "phone_number": "+1-298-555-8765",
+    "website": "https://luxation.com",
+    "image": "luxation_travel_logo.png",
+    "membership_level": 3,
+    "industry": "Travel",
+    "founded": "1976"
+    }
+]
+  

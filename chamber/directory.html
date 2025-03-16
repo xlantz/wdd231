@@ -4,33 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Header</title>
-  <link rel="stylesheet" href="direct.css">
-  <script src="direct.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Facebook Open Graph Meta Tags -->
-  <meta property="og:title" content="Business Name">
+  <meta property="og:title" content="Timbuktu Chamber of Commerce">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="path/to/your-image.jpg">
+  <meta property="og:image" content="image/timbuktu_logo.png">
   <meta property="og:url" content="https://www.yourwebsite.com">
 </head>
 <body>
   <header class="header">
     <div class="logo-container">
-      <img src="logo.png" alt="Business Logo" class="logo">
-      <span class="business-name">Business Name</span>
+      <img src="images/timbuktu_logo.png" alt="Timbuktu Chamber of Commerce Logo" class="logo">
+      <span class="business-name">Timbuktu Chamber of Commerce</span>
     </div>
     <nav class="nav">
       <ul class="nav-list">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Discover</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Member Info Section -->
+  <section id="members-container">
+    <h2>Members</h2>
+
+    <!-- Toggle Buttons -->
+    <div id="view-toggle">
+      <button id="grid-view-btn">Grid View</button>
+      <button id="list-view-btn">List View</button>
+    </div>
+
+    <!-- Dynamic content will be injected here -->
+    <div id="members-list"></div> 
+  </section>
 
   <footer>
     <p><span id="currentYear"></span></p>
