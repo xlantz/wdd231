@@ -86,14 +86,15 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;  
   align-items: center;
   flex-wrap: wrap;
 }
 
-.footer-left, .footer-right {
-  flex: 1;
+.footer-left {
+  flex: 1;  
   padding: 10px;
+  text-align: left; 
 }
 
 .footer-center {
@@ -101,9 +102,14 @@ footer {
   text-align: center; 
 }
 
+.footer-right {
+  flex: 1; 
+  padding: 10px;
+  text-align: right;  
+}
+
 .footer-left p, .footer-right p {
   margin: 5px 0;
-  text-align: left; 
 }
 
 .footer-center a {
@@ -148,12 +154,12 @@ footer p {
 
 /* List View Layout */
 #members-list.list-view {
-  display: block; /* Remove grid display */
+  display: block; 
 }
 
 #members-list.list-view .member-card {
-  margin-bottom: 20px; /* Spacing between cards in list view */
-  width: 100%; /* Ensure cards take up full width in list view */
+  margin-bottom: 20px; 
+  width: 100%; 
 }
 
 /* Default Grid Layout */
@@ -261,17 +267,17 @@ footer p {
   }
 
   #members-list {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr; 
   }
 }
 
 @media (max-width: 480px) {
   .business-name {
-    font-size: 1.2rem; /* Smaller business name on very small screens */
+    font-size: 1.2rem; 
   }
 
   .footer-center img {
     width: 20px;
-    height: 20px; /* Smaller icons on very small screens */
+    height: 20px; 
   }
 }
