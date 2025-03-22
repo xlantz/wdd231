@@ -75,3 +75,72 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchMembers();
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    async function fetchBusinesses() {
+        try {
+            const response = await fetch('data/members.json');
+            const businesses = await response.json();
+
+            // Filter businesses with membership levels 2 or 3
+            const filteredBusinesses = businesses.filter(business => 
+                business.membership_level === 2 || business.membership_level === 3
+            );
+
+            displayRandomBusinesses(filteredBusinesses);
+        } catch (error) {
+            console.error('Error fetching business data:', error);
+        }
+    }
+
+    function displayRandomBusinesses(businesses) {
+        const randomBusinessesSection = document.querySelector('#random-businesses');
+
+        // Randomly shuffle the filtered businesses array
+        const shuffledBusinesses = businesses.sort(() => 0.5 - Math.random());
+
+        // Limit to 3 businesses (display 3 at a time)
+        const randomSelectedBusinesses = shuffledBusinesses.slice(0, 3);
+
+        // Clear the section before adding new businesses
+        randomBusinessesSection.innerHTML = '';
+
+        // Create a business card for each selected business
+        randomSelectedBusinesses.forEach(business => {
+            const businessBox = document.createElement('div');
+            businessBox.classList.add('business-box');
+
+            const businessLogo = document.createElement('img');
+            businessLogo.src = business.image;
+            businessLogo.alt = `${business.name} Logo`;
+            businessLogo.classList.add('business-logo');
+
+            const businessName = document.createElement('p');
+            businessName.textContent = business.name;
+            businessName.classList.add('business-name');
+
+            const businessIndustry = document.createElement('p');
+            businessIndustry.textContent = business.industry;
+            businessIndustry.classList.add('business-industry');
+
+            const businessWebsite = document.createElement('a');
+            businessWebsite.href = business.website;
+            businessWebsite.target = "_blank";
+            businessWebsite.textContent = 'Visit Website';
+            businessWebsite.classList.add('business-website');
+
+            // Append elements to the business box
+            businessBox.appendChild(businessLogo);
+            businessBox.appendChild(businessName);
+            businessBox.appendChild(businessIndustry);
+            businessBox.appendChild(businessWebsite);
+
+            // Append the business box to the section
+            randomBusinessesSection.appendChild(businessBox);
+        });
+    }
+
+    // Fetch and display businesses when the page loads
+    fetchBusinesses();
+});
+

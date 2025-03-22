@@ -317,6 +317,47 @@ footer p {
   background-color: #e6ffe6;
 }
 
+/*Business Boxes Section*/
+.random-businesses {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.business-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+}
+
+.business-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.business-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.business-box p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.business-box a {
+  color: #C23F38;
+  text-decoration: none;
+}
+
+.business-box a:hover {
+  text-decoration: underline;
+}
 
 
 @media (max-width: 768px) {
@@ -382,6 +423,17 @@ footer p {
   .info-boxes {
     grid-template-columns: 1fr;
   }
+
+  .random-businesses {
+    flex-direction: column; /* Stack the business cards vertically */
+    align-items: center; 
+}
+
+  .business-box {
+      width: 80%; /* Make business cards take up more width on smaller screens */
+      margin-bottom: 20px; 
+  }
+
 }
 
 @media (max-width: 480px) {
