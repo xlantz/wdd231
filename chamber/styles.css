@@ -274,7 +274,48 @@ footer p {
 }
 
 
+/* Info Boxes Styles */
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
 
+.info-box {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-box:hover {
+  transform: translateY(-10px);
+}
+
+.info-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.event-box {
+  background-color: #e6f7ff;
+}
+
+.weather-box {
+  background-color: #fff7e6;
+}
+
+.forecast-box {
+  background-color: #e6ffe6;
+}
 
 
 
@@ -296,7 +337,7 @@ footer p {
   }
 
   .nav.active {
-    display: block; /* Show the nav links when the hamburger is clicked */
+    display: block; 
   }
 
   .nav .nav-list {
@@ -310,7 +351,7 @@ footer p {
   }
 
   .hamburger {
-    display: flex; /* Show the hamburger icon on small screens */
+    display: flex; 
   }
 
   .hamburger .bar {
@@ -336,6 +377,10 @@ footer p {
 
   #members-list {
     grid-template-columns: 1fr; 
+  }
+
+  .info-boxes {
+    grid-template-columns: 1fr;
   }
 }
 
