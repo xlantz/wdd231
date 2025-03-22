@@ -230,6 +230,7 @@ footer p {
   right: 0;
   bottom: 0;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .hero-image {
@@ -307,15 +308,15 @@ footer p {
 }
 
 .event-box {
-  background-color: #e6f7ff;
+  background-color: #DCDCDD;
 }
 
 .weather-box {
-  background-color: #fff7e6;
+  background-color: #7FB285;
 }
 
 .forecast-box {
-  background-color: #e6ffe6;
+  background-color: #C4C6E7;
 }
 
 /*Business Boxes Section*/
