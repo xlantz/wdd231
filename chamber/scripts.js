@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch and display member data
     async function fetchMembers() {
         try {
-            const response = await fetch('data/members.json'); // Replace with actual path to your JSON file or API endpoint
+            const response = await fetch('data/members.json');
             const members = await response.json(); // Parse the JSON response
 
             const membersList = document.getElementById('members-list');
@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Append member card to the container
                 membersList.appendChild(memberCard);
             });
-        } catch (error) {
+        } 
+        catch (error) {
             console.error('Error fetching member data:', error);
         }
     }
@@ -72,4 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call the function to fetch and display the members
     fetchMembers();
+
 });
