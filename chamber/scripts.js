@@ -144,3 +144,73 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchBusinesses();
 });
 
+// API Key for OpenWeatherMap
+const apiKey = 'bb043723017f9fc899318f76b17c25c1';
+const city = 'Layton,us'; 
+const units = 'imperial'; 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch weather data on page load
+    fetchWeatherData();
+});
+
+async function fetchWeatherData() {
+    try {
+        // Fetch current weather data from OpenWeatherMap API
+        const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`);
+        const currentWeather = await currentWeatherResponse.json();
+
+        // Fetch forecast data from OpenWeatherMap API
+        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&cnt=3&appid=${apiKey}`);
+        const forecastData = await forecastResponse.json();
+
+        // Display current weather
+        displayCurrentWeather(currentWeather);
+
+        // Display weather forecast
+        displayWeatherForecast(forecastData);
+
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('current-weather').innerHTML = 'Unable to fetch weather data.';
+        document.getElementById('weather-forecast').innerHTML = 'Unable to fetch weather forecast.';
+    }
+}
+
+function displayCurrentWeather(data) {
+    const currentWeatherBox = document.getElementById('current-weather');
+
+    const weatherDescription = data.weather[0].description;
+    const temperature = data.main.temp;
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+    const pressure = data.main.pressure;
+
+    currentWeatherBox.innerHTML = `
+        <p><strong>Temperature:</strong> ${temperature}°F</p>
+        <p><strong>Description:</strong> ${weatherDescription}</p>
+        <p><strong>Humidity:</strong> ${humidity}%</p>
+        <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
+        <p><strong>Pressure:</strong> ${pressure} hPa</p>
+    `;
+}
+
+function displayWeatherForecast(data) {
+    const forecastBox = document.getElementById('weather-forecast');
+
+    // Get the forecast for the next 3 days
+    const forecast = data.list.slice(0, 3);
+
+    let forecastHTML = '';
+    forecast.forEach(item => {
+        const date = new Date(item.dt * 1000).toLocaleDateString(); // Convert Unix timestamp to a readable date
+        const temp = item.main.temp;
+        const description = item.weather[0].description;
+
+        forecastHTML += `
+            <p><strong>${date}:</strong> ${temp}°F, ${description}</p>
+        `;
+    });
+
+    forecastBox.innerHTML = forecastHTML;
+}
