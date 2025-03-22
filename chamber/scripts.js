@@ -179,14 +179,21 @@ async function fetchWeatherData() {
 
 function displayCurrentWeather(data) {
     const currentWeatherBox = document.getElementById('current-weather');
-
+    
+    // Extract necessary data
     const weatherDescription = data.weather[0].description;
     const temperature = data.main.temp;
     const humidity = data.main.humidity;
     const windSpeed = data.wind.speed;
     const pressure = data.main.pressure;
+    const iconCode = data.weather[0].icon;  // Icon code from the API response
+    
+    // Construct the icon image URL
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
+    // Display current weather with icon
     currentWeatherBox.innerHTML = `
+        <img src="${iconUrl}" alt="Weather Icon" class="weather-icon">
         <p><strong>Temperature:</strong> ${temperature}°F</p>
         <p><strong>Description:</strong> ${weatherDescription}</p>
         <p><strong>Humidity:</strong> ${humidity}%</p>
@@ -195,22 +202,37 @@ function displayCurrentWeather(data) {
     `;
 }
 
+
 function displayWeatherForecast(data) {
     const forecastBox = document.getElementById('weather-forecast');
 
-    // Get the forecast for the next 3 days
+    // Get the forecast for the next 3 periods (we will process today + next 2)
     const forecast = data.list.slice(0, 3);
 
     let forecastHTML = '';
-    forecast.forEach(item => {
-        const date = new Date(item.dt * 1000).toLocaleDateString(); // Convert Unix timestamp to a readable date
+    forecast.forEach((item, index) => {
+        const date = new Date(item.dt * 1000); // Convert Unix timestamp to Date object
+
+        // Convert the date to Mountain Standard Time (MST)
+        const options = { weekday: 'long', timeZone: 'America/Denver' };
+        let dayName = new Intl.DateTimeFormat('en-US', options).format(date);
+
+        // Customize day labels
+        if (index === 0) {
+            dayName = "Today"; // For the current day
+        } else if (index === 1) {
+            dayName = "Tomorrow"; // For the next day
+        }
+
         const temp = item.main.temp;
         const description = item.weather[0].description;
 
         forecastHTML += `
-            <p><strong>${date}:</strong> ${temp}°F, ${description}</p>
+            <p><strong>${dayName}:</strong> ${temp}°F</p>
         `;
     });
 
     forecastBox.innerHTML = forecastHTML;
 }
+
+
