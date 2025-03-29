@@ -210,7 +210,6 @@ footer p {
   text-decoration: underline;
 }
 
-
 /* Styles for the Hero Section */
 .hero {
   position: relative;
@@ -252,11 +251,6 @@ footer p {
   margin-bottom: 100px;
 }
 
-/*.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}*/
-
 .btn-hero {
   background-color: #ff4500;
   color: white;
@@ -274,7 +268,6 @@ footer p {
   transition: all 0.3s;
 }
 
-
 /* Info Boxes Styles */
 .info-boxes {
   display: grid;
@@ -282,7 +275,6 @@ footer p {
   justify-content: center;
   gap: 20px;
 }
-
 
 .info-box {
   background-color: #f4f4f4;
@@ -319,7 +311,7 @@ footer p {
   background-color: #C4C6E7;
 }
 
-/*Business Boxes Section*/
+/* Business Boxes Section */
 .random-businesses {
   display: flex;
   justify-content: space-between;
@@ -367,7 +359,55 @@ footer p {
   margin-bottom: 10px; 
 }
 
+/* Styles for Business Cards Section */
+.business-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.business-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 45%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.business-card:hover {
+  transform: translateY(-10px);
+}
+
+.business-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.business-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.business-card p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.business-card a {
+  color: #C23F38;
+  text-decoration: none;
+}
+
+.business-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles for Small Screens */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -435,13 +475,12 @@ footer p {
   .random-businesses {
     flex-direction: column; /* Stack the business cards vertically */
     align-items: center; 
-}
+  }
 
   .business-box {
       width: 80%; /* Make business cards take up more width on smaller screens */
       margin-bottom: 20px; 
   }
-
 }
 
 @media (max-width: 480px) {

@@ -236,3 +236,49 @@ function displayWeatherForecast(data) {
 }
 
 
+
+// Function to fetch and display companies dynamically
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        const companyCardsContainer = document.getElementById('company-cards');
+        data.forEach(company => {
+          const card = document.createElement('div');
+          card.classList.add('company-card');
+          
+          // Create the HTML content for each card
+          card.innerHTML = `
+            <img src="${company.image}" alt="${company.name} Logo">
+            <h3>${company.name}</h3>
+            <p>${company.industry}</p>
+            <p>Founded: ${company.founded}</p>
+            <a href="${company.website}" target="_blank">Visit Website</a>
+          `;
+          
+          // Append the card to the container
+          companyCardsContainer.appendChild(card);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  });
+  
+  // Set timestamp when the page loads (for index.html)
+  window.onload = function() {
+    const timestamp = document.getElementById('timestamp');
+    if (timestamp) {
+      timestamp.value = new Date().toISOString();
+    }
+  };
+  
+  // Populate form data on thank you page (for thankyou.html)
+  if (window.location.search) {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('first-name').textContent = urlParams.get('first-name');
+    document.getElementById('last-name').textContent = urlParams.get('last-name');
+    document.getElementById('email').textContent = urlParams.get('email');
+    document.getElementById('mobile').textContent = urlParams.get('mobile');
+    document.getElementById('business-name').textContent = urlParams.get('business-name');
+    document.getElementById('timestamp').textContent = urlParams.get('timestamp');
+  }
+  
