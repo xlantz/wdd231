@@ -68,6 +68,55 @@
     "membership_level": 3,
     "industry": "Travel",
     "founded": "1976"
+    },
+
+    {
+        "name": "",
+        "address": "",
+        "image": "images/b",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
+    },
+    {
+        "name": "",
+        "address": "",
+        "image": "images/",
+        "description":""
     }
 ]
   
