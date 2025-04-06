@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('timestamp').textContent = urlParams.get('timestamp');
   }
   
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const locationsData = [
         { "name": "Antelope Island", "address": "4528 West 1700 South, Syracuse, Utah 84075", "image": "images/bison_antelope_island.webp", "description": "Island where you can see bison and antelope roaming around." },
         { "name": "Black Island Farms", "address": "2075 4000 W, Syracuse, UT 84075", "image": "images/black_island_farms.webp", "description": "Take your family for some farm fun." },
