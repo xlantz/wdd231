@@ -282,3 +282,69 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('timestamp').textContent = urlParams.get('timestamp');
   }
   
+  document.addEventListener('DOMContentLoaded', () => {
+    const locationsData = [
+        { "name": "Antelope Island", "address": "4528 West 1700 South, Syracuse, Utah 84075", "image": "images/bison_antelope_island.webp", "description": "Island where you can see bison and antelope roaming around." },
+        { "name": "Black Island Farms", "address": "2075 4000 W, Syracuse, UT 84075", "image": "images/black_island_farms.webp", "description": "Take your family for some farm fun." },
+        { "name": "Buffalo Point", "address": "Antelope Island Rd, Syracuse, UT 84075", "image": "images/buffalo_point.webp", "description": "Hike one of the most stunning places on the salt lake." },
+        { "name": "Frary Peak Trail", "address": "4528 W 1700 S, Syracuse, UT 84075", "image": "images/frary_peak_trail.webp", "description": "Hiking trail to get a good glimpse of the Davis & Salt Lake Vallies" },
+        { "name": "Great Escape Room", "address": "525 Ring Rd, Layton, UT 84041", "image": "images/great_escape_room.webp", "description": "Real life puzzles in 60 mins, can you beat it?" },
+        { "name": "Great Salt Lake", "address": "Great Salt Lake, UT", "image": "images/great_salt_lake.webp", "description": "See one of the largest salt lakes in the world." },
+        { "name": "Sea Quest", "address": "1201 N Hill Field Rd, Layton, UT 84041", "image": "images/sea_quest.webp", "description": "Come see aquarium entertainment." },
+        { "name": "Syracuse Utah Temple", "address": "1025 S 2500 W, Syracuse, UT 84075", "image": "images/syracuse_ut_temple.webp", "description": "One of the most stunning religious buildings in the world." }
+    ];
+
+    const cardsContainer = document.getElementById('cards-container');
+    
+    // Function to display cards
+    locationsData.forEach(location => {
+        const card = document.createElement('div');
+        card.classList.add('location-card');
+        card.innerHTML = `
+            <h2>${location.name}</h2>
+            <figure>
+                <img src="${location.image}" alt="${location.name}" class="location-image">
+            </figure>
+            <address>${location.address}</address>
+            <p>${location.description}</p>
+            <button>Learn More</button>
+        `;
+        cardsContainer.appendChild(card);
+    });
+
+    // LocalStorage to track visits
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentDate = Date.now();
+    const visitMessage = document.getElementById('visit-message');
+
+    if (!lastVisit) {
+        visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+        const timeDiff = currentDate - lastVisit;
+        const dayInMillis = 86400000;
+        const daysSinceLastVisit = Math.floor(timeDiff / dayInMillis);
+
+        if (daysSinceLastVisit < 1) {
+            visitMessage.textContent = "Back so soon! Awesome!";
+        } else {
+            visitMessage.textContent = `You last visited ${daysSinceLastVisit} ${daysSinceLastVisit === 1 ? 'day' : 'days'} ago.`;
+        }
+    }
+
+    // Store current date in localStorage
+    localStorage.setItem('lastVisit', currentDate);
+    
+    // Hover effect for images (only for large screens)
+    const images = document.querySelectorAll('.location-image');
+    images.forEach(image => {
+        image.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 1024) {  // Only apply hover effect on large screens
+                image.style.transform = 'scale(1.1)';
+                image.style.transition = 'transform 0.3s ease';
+            }
+        });
+        image.addEventListener('mouseleave', () => {
+            image.style.transform = 'scale(1)';
+        });
+    });
+});

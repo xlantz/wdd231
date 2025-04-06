@@ -493,3 +493,98 @@ footer p {
     height: 20px; 
   }
 }
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#cards-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+.location-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-card h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.location-card figure {
+  text-align: center;
+}
+
+.location-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.location-card address {
+  text-align: center;
+  font-style: normal;
+}
+
+.location-card p {
+  text-align: center;
+  font-size: 1em;
+  color: #555;
+}
+
+.location-card button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.location-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Sidebar */
+#sidebar {
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+
+/* Grid Layout for cards */
+@media (max-width: 640px) {
+  #cards-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  #cards-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  #cards-container {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Hover effect for large screens */
+@media (min-width: 1025px) {
+  .location-image {
+      transition: transform 0.3s ease;
+  }
+}
