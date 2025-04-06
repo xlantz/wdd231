@@ -86,10 +86,12 @@ h4 {
 /* Navigation */
 .nav {
     display: flex;
+    flex-direction: row; /* Default: horizontal layout */
 }
 
 .nav-list {
     list-style: none;
+    display: flex;
 }
 
 .nav-list li {
@@ -135,7 +137,7 @@ footer img {
     height: auto;
 }
 
-/* Media Queries */
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
     .nav {
         display: none;
