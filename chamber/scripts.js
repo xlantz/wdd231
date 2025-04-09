@@ -347,4 +347,21 @@ document.addEventListener('DOMContentLoaded', () => {
             image.style.transform = 'scale(1)';
         });
     });
+    
+    function addQueryParams(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        const form = event.target;
+        const url = new URL(form.action);
+        
+        // Append form data as URL parameters
+        new FormData(form).forEach((value, key) => {
+            url.searchParams.append(key, value);
+        });
+        
+        // Redirect to the thank-you page with query parameters
+        window.location.href = url.toString();
+    }
+    
+
 });
