@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Home Page" content="This is the Home Page.">
     <meta name="author" content="Alex Lanterman">
-    <title>Home Page</title>
+    <title>FAQs</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="scripts.js" defer></script>
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <!-- Facebook Open Graph Meta Tags -->
-    <meta property="og:title" content="Site Plane Home Page">
+    <meta property="og:title" content="FAQ Page">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="image/#">
-    <meta property="og:url" content="https://xlantz.github.io/wdd231/siteplan.html">
-    </head>
-
+    <meta property="og:image" content="image/superfood_logo.png">
+    <meta property="og:url" content="https://xlantz.github.io/wdd231/faq.html">
+</head>
 <body>
     <header class="header">
         <div class="logo-container">
           <img src="images/superfood_logo.png" alt="Superfood Logo" class="logo">
-          <span class="business-name">Home</span>
+          <span class="business-name">FAQs</span>
         </div>
     
       <!-- Hamburger Icon -->
@@ -43,20 +42,51 @@
           <li><a href="siteplan.html">Site Plan</a></li>
         </ul>
       </nav>
-      </header>
+    </header>
     <main>
+        <div class="faq-container">
+            <h3>Frequently Asked Questions</h3>
+            
+            <!-- FAQ Accordion Section -->
+            <div class="faq-item">
+                <button class="faq-question">What is Superfood?</button>
+                <div class="faq-answer">
+                    <p>Superfood is a nutrient-rich food considered to be especially beneficial for health and well-being.</p>
+                </div>
+            </div>
 
+            <div class="faq-item">
+                <button class="faq-question">How can I contact customer support?</button>
+                <div class="faq-answer">
+                    <p>You can contact us by email at support@superfood.com or call our helpline at 1-800-123-4567.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Where do you source your ingredients?</button>
+                <div class="faq-answer">
+                    <p>We source our ingredients from organic farms worldwide to ensure quality and sustainability.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do you offer international shipping?</button>
+                <div class="faq-answer">
+                    <p>Yes, we offer international shipping to many countries. Please check our shipping page for details.</p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer>
         <div class="footer-container">
-          <!-- Left Section (Contact Info) -->
           <div class="footer-left">
-
+            <!-- Left Section (Contact Info) -->
           </div>
       
-          <!-- Middle Section (Social Media Icons) -->
           <div class="footer-center">
+            <!-- Social Media Links -->
             <a href="https://www.youtube.com" target="_blank">
               <img src="images/youtube_icon.png" alt="YouTube">
             </a>
@@ -68,12 +98,11 @@
             </a>
           </div>
     
-          <!-- Right Section (Name, Last Updated)-->
           <div class="footer-right">
             <p><span id="currentYear"></span></p>
             <p id="lastModified"></p>
           </div>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>
