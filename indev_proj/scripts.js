@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Footer Year and Last Modified ===
     const currentYear = new Date().getFullYear();
     const currentYearElem = document.getElementById('currentYear');
-    if (currentYearElem) currentYearElem.textContent = currentYear;
+    if (currentYearElem) currentYearElem.textContent = `© ${currentYear} | Alexander M. Lanterman | VA`;
 
     const lastModifiedElem = document.getElementById('lastModified');
     if (lastModifiedElem) lastModifiedElem.textContent = `Last updated: ${document.lastModified}`;
