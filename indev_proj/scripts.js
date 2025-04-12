@@ -190,41 +190,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // === Ransom Recipe and Food Cards on Home Page ===
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const foodCard = document.getElementById("random-food-card");
     const recipeCard = document.getElementById("random-recipe-card");
   
-    if (foodCard && recipeCard) {
-      fetch("data.json")
-        .then(response => {
-          if (!response.ok) throw new Error("Failed to load data.json");
-          return response.json();
-        })
-        .then(data => {
-          const foodItems = data.filter(item => item.name);
-          const recipeItems = data.filter(item => item.dish);
+    if (!foodCard || !recipeCard) return;
   
-          const randomFood = foodItems[Math.floor(Math.random() * foodItems.length)];
-          const randomRecipe = recipeItems[Math.floor(Math.random() * recipeItems.length)];
+    fetch("data.json")
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch data.");
+        return response.json();
+      })
+      .then((data) => {
+        const foodItems = data.filter(item => item.name);
+        const recipeItems = data.filter(item => item.dish);
   
-          foodCard.innerHTML = `
-            <h3>🌿 Random Food: ${randomFood.name}</h3>
-            <p><strong>Found in:</strong> ${randomFood.found}</p>
-            <p><strong>Type:</strong> ${randomFood.type}</p>
-            <p><strong>Nutrients:</strong> ${randomFood.nutrients}</p>
-          `;
+        const randomFood = getRandomItem(foodItems);
+        const randomRecipe = getRandomItem(recipeItems);
   
-          recipeCard.innerHTML = `
-            <h3>🍽️ Random Recipe: ${randomRecipe.dish}</h3>
-            <p><strong>Meal:</strong> ${randomRecipe.meal}</p>
-            <p><strong>Ingredients:</strong> ${randomRecipe.ingredients}</p>
-            <p><strong>Instructions:</strong> ${randomRecipe.recipie}</p>
-            <a href="${randomRecipe.website}" target="_blank">View Full Recipe</a>
-          `;
-        })
-        .catch(error => console.error("Error loading random cards:", error));
+        foodCard.innerHTML = `
+          <h3>🌿 Random Food: ${randomFood.name}</h3>
+          <p><strong>Found in:</strong> ${randomFood.found}</p>
+          <p><strong>Type:</strong> ${randomFood.type}</p>
+          <p><strong>Nutrients:</strong> ${randomFood.nutrients}</p>
+        `;
+  
+        recipeCard.innerHTML = `
+          <h3>🍽️ Random Recipe: ${randomRecipe.dish}</h3>
+          <p><strong>Meal:</strong> ${randomRecipe.meal}</p>
+          <p><strong>Ingredients:</strong> ${randomRecipe.ingredients}</p>
+          <p><strong>Instructions:</strong> ${randomRecipe.recipie}</p>
+          <a href="${randomRecipe.website}" target="_blank">View Full Recipe</a>
+        `;
+      })
+      .catch(error => {
+        console.error("Error loading random cards:", error);
+        foodCard.innerHTML = "<p>Unable to load food data.</p>";
+        recipeCard.innerHTML = "<p>Unable to load recipe data.</p>";
+      });
+  
+    function getRandomItem(array) {
+      return array[Math.floor(Math.random() * array.length)];
     }
-  });
+  }); 
 
   document.addEventListener("DOMContentLoaded", () => {
     const banner = document.getElementById("welcome-banner");
