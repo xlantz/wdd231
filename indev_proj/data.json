@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Spinach",
+        "found": "China and US",
+        "type": "leafy green",
+        "nutrients": "vitamins A, C, and K"
+    },
+    {
+        "name": "Kale",
+        "found": "Turkey",
+        "type": "leafy green",
+        "nutrients": "vitamins A, B6, C, K, and antioxidents"
+    },
+    {
+        "name": "Salmon",
+        "found": "Pacific and Atlantic Ocean, as well as any river or stream that flows into those oceans",
+        "type": "meat",
+        "nutrients": "omega-3, vitamin B12, selenium, viamin D, Potassium, and 22g of protein with 12g of fat in a 3oz portion"
+    },
+    {
+        "name": "Bison",
+        "found": "North America",
+        "type": "meat",
+        "nutrients": "iron, zinc, selenium, vitamin B, omega-3, omega-6, and 20g of protein with 8.5g of fat in a 100g portion"
+    },
+    {
+        "name": "Blueberry",
+        "found": "The Americas",
+        "type": "fruit",
+        "nutrients": "vitamins C, K, manganese, and fiber"
+    },
+    {
+        "name": "Cranberry",
+        "found": "US",
+        "type": "fruit",
+        "nutrients": "vitamins C, E, and K"
+    }
+    
+]
