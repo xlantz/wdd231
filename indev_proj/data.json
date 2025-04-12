@@ -34,6 +34,33 @@
         "found": "US",
         "type": "fruit",
         "nutrients": "vitamins C, E, and K"
+    },
+    {
+        "dish": "Bacon and Spinach Pizza",
+        "meal": "dinner",
+        "ingredients": "1 prebaked 12-inch pizza crust, 1/3 cup pizza sauce, 1 cup shaved Parmesan cheese, 2 cups fresh baby spinach, thinly sliced, 8 ready-to-serve fully cooked bacon strips, cut into 1-inch pieces",
+        "recipe": "Preheat oven to 450°. Place crust on an ungreased baking sheet. Spread with sauce; top with 1/2 cup cheese, spinach and bacon. Sprinkle with remaining cheese. Bake until cheese is melted, 8-10 minutes.",
+        "website": "https://www.tasteofhome.com/recipes/bacon-and-spinach-pizza/"
+    },
+    {
+        "dish": "Bison Burger",
+        "meal": "dinner",
+        "ingredients": "Lean ground bison: 85% lean and 15% fat, Mustard, Kosher salt, black pepper, onion powder, garlic powder, smoked paprika, dried parsley, and cayenne pepper, and any toppings.",
+        "recipe": "In a large bowl, use clean hands to mix the bison meat and spices together until well-seasoned. Form four patties, each weighing 4 ounces, 3 inches in diameter, and ½ inch thick. Make a dimple in the center of each patty.Preheat a grill, a grill pan, or a dual-contact electric grill over medium-high heat. Spray or brush the grill surfaces with oil.For medium doneness, grill the burgers for about 4 minutes on each side or a total of 4 minutes on a dual-contact grill.Serve the burgers immediately.",
+        "website":"https://healthyrecipesblogs.com/bison-burger-recipe/"
+    },
+    {
+        "dish": "Blueberry and Kale Smoothie",
+        "meal": "breakfast",
+        "ingredients": "Blueberries, Banana, Kale, Chia seeds, Vanilla Greek yogurt, Unsweetened coconut milk",
+        "recipe": "Put in blender, then blend until it's smooth.",
+        "website":"https://www.organizeyourselfskinny.com/blueberry-and-kale-smoothie/"
+    },
+    {
+        "dish": "Cranberry Honey Glazed Salmon",
+        "meal": "lunch",
+        "ingredients": "Honey, Soy Sauce, Cranberry juice, Smoked Paprika, Bourbon (optional), Garlic, Salmon, Kosher salt, Black pepper, Cranberries, Dill",
+        "recipe": "Prepare the marinade/sauce.Marinate the salmon fillets with half of the sauceBake the salmon.Reduce the other half of the sauce over the stove while the salmon is in the oven.Smother the cooked salmon with the reduced sauce, garnish and serve immediately.",
+        "website":"https://mommyshomecooking.com/cranberry-honey-glazed-salmon/"
     }
-    
 ]
