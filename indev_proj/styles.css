@@ -408,3 +408,27 @@ footer img {
     font-size: 1.5rem;
   }
   
+  .random-card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 1000px;
+  }
+  
+  .random-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+  }
+  
+  .random-card h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  

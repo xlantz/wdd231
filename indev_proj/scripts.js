@@ -188,3 +188,42 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error fetching weather forecast:', error));
     }
 });
+
+// === Ransom Recipe and Food Cards on Home Page ===
+document.addEventListener("DOMContentLoaded", () => {
+    const foodCard = document.getElementById("random-food-card");
+    const recipeCard = document.getElementById("random-recipe-card");
+  
+    if (foodCard && recipeCard) {
+      fetch("data.json")
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to load data.json");
+          return response.json();
+        })
+        .then(data => {
+          const foodItems = data.filter(item => item.name);
+          const recipeItems = data.filter(item => item.dish);
+  
+          const randomFood = foodItems[Math.floor(Math.random() * foodItems.length)];
+          const randomRecipe = recipeItems[Math.floor(Math.random() * recipeItems.length)];
+  
+          foodCard.innerHTML = `
+            <h3>🌿 Random Food: ${randomFood.name}</h3>
+            <p><strong>Found in:</strong> ${randomFood.found}</p>
+            <p><strong>Type:</strong> ${randomFood.type}</p>
+            <p><strong>Nutrients:</strong> ${randomFood.nutrients}</p>
+          `;
+  
+          recipeCard.innerHTML = `
+            <h3>🍽️ Random Recipe: ${randomRecipe.dish}</h3>
+            <p><strong>Meal:</strong> ${randomRecipe.meal}</p>
+            <p><strong>Ingredients:</strong> ${randomRecipe.ingredients}</p>
+            <p><strong>Instructions:</strong> ${randomRecipe.recipie}</p>
+            <a href="${randomRecipe.website}" target="_blank">View Full Recipe</a>
+          `;
+        })
+        .catch(error => console.error("Error loading random cards:", error));
+    }
+  });
+  
+  
