@@ -226,7 +226,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("welcome-banner");
+    const now = Date.now();
+    const lastVisit = localStorage.getItem("lastVisit");
+  
+    let message = "";
+  
+    if (!lastVisit) {
+      // First-time visitor
+      message = "👋 Welcome to our site! We're glad you're here.";
+    } else {
+      // Returning visitor
+      const timeDiff = now - parseInt(lastVisit, 10);
+      const seconds = Math.floor(timeDiff / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
+  
+      message = "👋 Welcome back! It's been ";
+  
+      if (days > 0) message += `${days} day${days !== 1 ? "s" : ""}`;
+      else if (hours > 0) message += `${hours} hour${hours !== 1 ? "s" : ""}`;
+      else if (minutes > 0) message += `${minutes} minute${minutes !== 1 ? "s" : ""}`;
+      else message += `${seconds} second${seconds !== 1 ? "s" : ""}`;
+  
+      message += " since your last visit.";
+    }
+  
+    // Show banner
+    banner.textContent = message;
+    banner.classList.remove("hidden");
+  
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      banner.classList.add("fade-out");
+      setTimeout(() => {
+        banner.classList.add("hidden");
+      }, 1000); // Wait for fade-out transition
+    }, 5000);
+  
+    // Save current visit time
+    localStorage.setItem("lastVisit", now.toString());
+  });
+  
+  
   
   
   
